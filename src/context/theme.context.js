@@ -5,6 +5,8 @@ const ThemeContext = createContext();
 function ThemeProviderWrapper(props) {
   const [theme, setTheme] = useState('light');
 
+  const API_URL = "http://localhost"
+
   const toggleTheme = () => {
     if (theme === 'light') { 
       setTheme('dark');
@@ -14,7 +16,7 @@ function ThemeProviderWrapper(props) {
   }  
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={  { theme, toggleTheme }  }>
       {props.children}
     </ThemeContext.Provider>
   )
